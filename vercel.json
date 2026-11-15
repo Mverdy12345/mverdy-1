@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "0 3 * * *"
+    }
+  ],
+  "functions": {
+    "src/app/api/jobs/[id]/process/route.ts": { "maxDuration": 300 },
+    "src/app/api/jobs/[id]/video/route.ts": { "maxDuration": 300 },
+    "src/app/api/upload/route.ts": { "maxDuration": 300 },
+    "src/app/api/jobs/route.ts": { "maxDuration": 300 },
+    "src/app/mcp/route.ts": { "maxDuration": 300 }
+  }
+}
